@@ -4,6 +4,11 @@
  */
 package herencia;
 
+import herencia.Multimedia.format;
+import java.util.Scanner;
+
+
+
 /**
  *
  * @author luibol
@@ -11,31 +16,31 @@ package herencia;
 public class Main {
 
     public static void main(String[] args) {
-        //Se crea un objeto de tipo ListaMultimedia
-        ListaMultimedia ListaMultimedia = new ListaMultimedia(10);
-
-        //Se crean 3 peliculas
-        try {
-            Pelicula Batman = new Pelicula("Batman Begins", "Bruce Wayne", format.mp3, "124", "Gerard Butler", "Jennifer Lawrence");
-            Pelicula Superman = new Pelicula("Superman Returns", "Steven Spielber", format.wav, "132", "Richard Gere", "Jennifer Anniston");
-            Pelicula Torrente = new Pelicula("Torrente", "Santiago Segura", format.dvd, "96", "Santiago Segura", "Neus Asensi");
-
-            //Añadimos a la lista
-            ListaMultimedia.add(Batman);
-            ListaMultimedia.add(Superman);
-            ListaMultimedia.add(Torrente);
-
-            //
-            int pos = ListaMultimedia.indexOf(Torrente);
-            System.out.println("Posicion:" + pos);
-            System.out.println(ListaMultimedia.get(pos));
-            
-        } catch (Exception x) {
-            System.out.println("Datos incorrectos. Lista no creada");
-        }
         
-        //Se muestra la lista por pantalla
-        System.out.println(ListaMultimedia);
+        Scanner tcl = new Scanner (System.in);
+        int opcion;
+        
+        do{
+            System.out.println("=====MENU=====");
+            System.out.println("1.PELICULAS");
+            System.out.println("2.DISCOS");
+            System.out.println("3.SALIR");
+            System.out.println("");
+            System.out.println("Selecciona una opcion:");
+            opcion = tcl.nextInt();
+            
+            switch (opcion){
+                case 1:{
+                
+                
+                }
+            
+            
+            
+            }
+            
+        }while(opcion!=3);
+        
     }
     
 }

@@ -10,6 +10,11 @@ package herencia;
  * 
  */
 public class Multimedia {
+     public enum format {
+        vav, mp3, midi, avi, mov, mpg, cdAudio, dvd
+
+    }
+
 
     //Atributos
     protected String titulo, autor, duracion;
@@ -77,9 +82,6 @@ public class Multimedia {
         return igual;
     }
 
-     public enum format {
-        wav, mp3, midi, avi, mov, mpg, cdAudio, dvd
-
-    }
+     
 
 }
