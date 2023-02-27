@@ -13,23 +13,57 @@ import java.util.ArrayList;
 public class ListaMultimedia {
 
     //Atributos
-    ArrayList<Multimedia> listaMulti = new ArrayList();
-    int numObj;
+    private Multimedia[] lista;
+    private int total = 0;
 
-    //Constructor
-    public ListaMultimedia(int numObj) {
-        this.numObj = numObj;
+    //Constructor que recibe como parametro un entero indicando el numero maximo
+    public ListaMultimedia(int x) {
+        lista = new Multimedia[x];
     }
 
-    //Metodo para saber la cantidad de objetos que hay dentro del arrayList
-    public int numeroObjetos(int numObj) {
-        int cont = 0;
-        for (int i = 0; i < listaMulti.size(); i++) {
-            cont++;
-            numObj = cont;
-        }
-        return numObj;
+    //devuelve el numero de objetos que hay en la lista
+    public int size() {
+        return total;
+    }
 
+    //añade el objeto al final de la lista
+    public boolean add(Multimedia a) {
+        if (total < lista.length) {
+            lista[total] = a;
+            total++;
+            return true;
+
+        } else {
+            return false;
+        }
+
+    }
+
+    //devuelve el objeto situado en la posicion especificada
+    public Multimedia get(int pos) {
+       return lista[pos];
+    }
+    
+    //e)devuelve la posición del objeto que se introduce por parámetro, si no se encuentra, devolverá -1.
+    public int indexOf (Multimedia m){
+        for (int i = 0; i < lista.length; i++) {
+            if(lista[i].equals(m)){
+                return i;
+            }
+        }
+        return -1;
+    
+    }
+    
+    //f 
+    public String toString(){
+        String resultado = "";
+        
+        for (int i = 0; i < this.size(); i++) {
+            resultado = resultado + "\nMultimedia ["+ i +"]: \n"+this.get(i).toString() + "\n";
+        }
+        return resultado;
+    
     }
 
 }

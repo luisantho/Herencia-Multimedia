@@ -14,7 +14,7 @@ public class Pelicula extends Multimedia {
     String actorPrincipal, actrizPrincipal;
 
     //Constructor
-    public Pelicula(String actorPrincipal, String actrizPrincipal, String titulo, String autor, String formato, double duracion) {
+    public Pelicula(String actorPrincipal, String actrizPrincipal, String titulo, String autor, format formato, String duracion) {
         super(titulo, autor, formato, duracion);
 
         if (actorPrincipal == null && actrizPrincipal == null) {

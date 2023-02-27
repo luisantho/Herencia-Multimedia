@@ -7,20 +7,21 @@ package herencia;
 /**
  *
  * @author luibol
+ * 
  */
 public class Multimedia {
 
     //Atributos
-    protected String titulo, autor, formato;
-    protected double duracion;
+    protected String titulo, autor, duracion;
+    protected format formato;
 
     //Constructor con parametros
-    public Multimedia(String titulo, String autor, String formato, double duracion) {
+    public Multimedia(String titulo, String autor, format formato, String duracion) {
         this.titulo = titulo;
         this.autor = autor;
         this.formato = formato;
         this.duracion = duracion;
-                
+
     }
     //Setters
 
@@ -32,16 +33,15 @@ public class Multimedia {
         this.autor = autor;
     }
 
-    public void setFormato(String formato) {
+    public void setFormato(format formato) {
         this.formato = formato;
     }
 
-    public void setDuracion(double duracion) {
+    public void setDuracion(String duracion) {
         this.duracion = duracion;
     }
-    
-    //Getters
 
+    //Getters
     public String getTitulo() {
         return titulo;
     }
@@ -50,29 +50,36 @@ public class Multimedia {
         return autor;
     }
 
-    public String getFormato() {
+    public format getFormato() {
         return formato;
     }
 
-    public double getDuracion() {
+    public String getDuracion() {
         return duracion;
     }
-    
-    //ToString
 
+    //ToString
     public String toString() {
         return "Multimedia{" + "titulo:" + titulo + ", autor:" + autor + ", formato:" + formato + ", duracion:" + duracion + '}';
     }
-    
+
     //Metodo equals
-    
-   // public static Boolean metodoEquals(Multimedia a){
-        
-        Boolean correcto;
-            //if(Multimedia instaceof )
-        
-    
-    
-    //}
-   
+    public Boolean equals(Multimedia a) {
+
+        Boolean igual = false;
+
+        if (a.getTitulo().equalsIgnoreCase(this.getTitulo()) && a.getAutor().equalsIgnoreCase(this.getAutor())) {
+            igual = true;
+        } else {
+            igual = false;
+
+        }
+        return igual;
+    }
+
+     public enum format {
+        wav, mp3, midi, avi, mov, mpg, cdAudio, dvd
+
+    }
+
 }
