@@ -4,6 +4,8 @@
  */
 package herencia;
 
+import java.util.Scanner;
+
 /**
  *
  * @author luibol
@@ -14,11 +16,11 @@ public class Pelicula extends Multimedia {
     String actorPrincipal, actrizPrincipal;
 
     //Constructor
-    public Pelicula(String actorPrincipal, String actrizPrincipal, String titulo, String autor, format formato, String duracion) {
+    public Pelicula(String actorPrincipal, String actrizPrincipal, String titulo, String autor, format formato, String duracion) throws Exception{
         super(titulo, autor, formato, duracion);
 
         if (actorPrincipal == null && actrizPrincipal == null) {
-            throw new IllegalArgumentException("Debe de haber al menos un actor o actriz principal");
+            throw new Exception("Debe de haber al menos un actor o actriz principal");
         }
         this.actorPrincipal = actorPrincipal;
         this.actrizPrincipal = actrizPrincipal;
@@ -45,6 +47,25 @@ public class Pelicula extends Multimedia {
     //toString
     public String toString() {
         return "Pelicula{" + "actorPrincipal=" + actorPrincipal + ", actrizPrincipal=" + actrizPrincipal + super.toString() + '}';
+    }
+    
+    //Metodo para insertar Peliculas
+    public void insertPeliculas() {
+        Scanner tcl = new Scanner (System.in);
+        boolean erroneo;
+        String actorPrincipal,actrizPrincipal,titulo,autor,duracion;
+        format formato;
+        
+        do{
+            erroneo = true;
+            System.out.println("Introduce el titulo:");
+            titulo = tcl.nextLine();
+            
+            System.out.println("Introduce el autor:");
+            autor = tcl.nextLine();
+            
+        }while(erroneo);
+    
     }
 
 }

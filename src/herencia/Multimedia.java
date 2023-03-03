@@ -10,6 +10,10 @@ package herencia;
  * 
  */
 public class Multimedia {
+
+    //Multimedia() {
+      //  throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    //}
      public enum format {
         vav, mp3, midi, avi, mov, mpg, cdAudio, dvd
 
